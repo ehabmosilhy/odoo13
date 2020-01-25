@@ -29,8 +29,8 @@ git clone https://www.github.com/odoo/odoo --depth 1 --branch 13.0 /opt/odoo13/o
 cd /opt/odoo13
 
 pip3 install wheel
-pip3 install -r odoo/requirements.txt
 
+sudo pip3 install -r https://github.com/odoo/odoo/raw/13.0/requirements.txt
 
 
 mkdir /opt/odoo13/odoo-extra-addons
@@ -71,7 +71,7 @@ SyslogIdentifier=odoo13
 PermissionsStartOnly=true
 User=odoo13
 Group=odoo13
-ExecStart=python3 /opt/odoo13/odoo/odoo-bin -c /etc/odoo13.conf
+ExecStart=/usr/bin/python3 /opt/odoo13/odoo/odoo-bin -c /etc/odoo13.conf
 StandardOutput=journal+console
 
 [Install]
